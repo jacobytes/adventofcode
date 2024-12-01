@@ -46,16 +46,16 @@ func main() {
 	}
 
 	var result int
-	occurrenceIndex := make(map[string]int)
+	occurrenceIndex := make(map[int]int)
 
 	for _, number := range listB {
 
-		occurrenceIndex[strconv.Itoa(number)]++
+		occurrenceIndex[number]++
 	}
 
 	for _, number := range listA {
 
-		totalOccurrences, hasOccurred := occurrenceIndex[strconv.Itoa(number)]
+		totalOccurrences, hasOccurred := occurrenceIndex[number]
 
 		if hasOccurred {
 			result += number * totalOccurrences
